@@ -23,9 +23,9 @@ public class UsuarioService {
             .build();
         usuarioRepo.save(user);
     }
-    public Usuario login(String string, String string2){
-    Usuario user = usuarioRepo.findByUsernameAndPassword(string, string2);
+    public Usuario login(String username, String password){
+    Usuario user = usuarioRepo.findByUsernameAndPassword(username, password);
     return user;
     }
-    
+
 }
