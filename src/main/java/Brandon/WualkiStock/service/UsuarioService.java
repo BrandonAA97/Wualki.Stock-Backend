@@ -27,4 +27,5 @@ public class UsuarioService {
     Usuario user = usuarioRepo.findByUsernameAndPassword(string, string2);
     return user;
     }
+    
 }
