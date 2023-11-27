@@ -12,7 +12,9 @@ import lombok.NoArgsConstructor;
 public class ProductoDto {
     private Long id;
     private String nombre;
-    private Long cantidad;
-    private Long precio;
+    private Long stock;
+    private Long invercion;
+    private Long precioLista;
+
 
 }

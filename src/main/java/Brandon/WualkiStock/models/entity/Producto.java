@@ -26,9 +26,12 @@ public class Producto {
     @Column(length = 45, nullable = false)
     private String nombre;
 
-    @Column ( length = 3, nullable = false)
-    private Long cantidad;
+    @Column ( length = 10, nullable = false)
+    private Long stock;
 
-    @Column ( length = 3, nullable = false)
-    private Long precio;
+    @Column ( length = 10, nullable = false)
+    private Long invercion;
+   
+    @Column ( length = 10, nullable = false)
+    private Long precioLista;
 }

@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ProductoRequest {
     private String nombre;
-    private Long cantidad;
-    private Long precio;
+    private Long stock;
+    private Long invercion;
+    private Long precioLista;
 
 }
