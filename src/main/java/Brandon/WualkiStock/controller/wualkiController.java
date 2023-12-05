@@ -1,7 +1,6 @@
 package Brandon.WualkiStock.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +37,7 @@ public class wualkiController {
         this.usuarioService.addNewUser(usuarioRequest);
     }
     //login del usuario
-    @PostMapping("/User")
+    @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Usuario> login(@RequestBody UsuarioRequest usuarioRequest){
     return ResponseEntity.ok(usuarioService.login(usuarioRequest.getUsername(), usuarioRequest.getPassword()));
@@ -50,11 +49,12 @@ public class wualkiController {
     public void nuevoProducto(@RequestBody ProductoRequest productoRequest){
         this.productoService.addNewProduc(productoRequest);
     }
-
+    //listar todos los productos
     @GetMapping("/allProduct")
     public List<ProductoDto> getAllProductos(){
         return this.productoService.getAllProductos();
     }
+    //editar los productos por id
     @PostMapping("/editProducto/{id}")
     public void editProduc(@PathVariable int id, Producto producto){
  
