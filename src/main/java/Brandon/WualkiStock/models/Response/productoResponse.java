@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class productoResponse {
     String nombre;
-    Long invercion;
     Long stock;
     Long precioLista;
+    Long invercion;
 }

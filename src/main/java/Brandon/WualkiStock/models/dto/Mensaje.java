@@ -1,5 +1,4 @@
 package Brandon.WualkiStock.models.dto;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,12 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ProductoRequest {
-    private Long id;
-    private String nombre;
-    private Long stock;
-    private Long invercion;
-    private Long precioLista;
-    
-
+public class Mensaje {
+    private String mensaje;
 }
+

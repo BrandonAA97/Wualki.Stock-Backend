@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Builder
 
 public class Producto {
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
@@ -28,10 +28,11 @@ public class Producto {
 
     @Column ( length = 10, nullable = false)
     private Long stock;
+    
+    @Column ( length = 10, nullable = false)
+    private Long precioLista;
 
     @Column ( length = 10, nullable = false)
     private Long invercion;
-   
-    @Column ( length = 10, nullable = false)
-    private Long precioLista;
+
 }
