@@ -63,10 +63,6 @@ public class wualkiController {
     @GetMapping("/producto/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Producto> editProduc(@PathVariable Long id){
-        // Optional<Producto> prod= productoService.listarID(id);
-        // model.addAttribute("producto", prod);
-        if(!productoService.existsById(id))
-            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
         Producto prod = productoService.listarID(id).get();
         return new ResponseEntity<>(prod, HttpStatus.OK); 
     }
