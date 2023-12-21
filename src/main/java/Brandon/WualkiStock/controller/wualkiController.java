@@ -68,7 +68,7 @@ public class wualkiController {
     }
 //editar los productos por id
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id")long id, @RequestBody ProductoDto productoDto){
+    public ResponseEntity<?> update(@PathVariable long id, @RequestBody ProductoDto productoDto){
         if(!productoService.existsById(id))
             return new ResponseEntity<>(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
         if(productoService.existsByNombre(productoDto.getNombre()) && productoService.getByNombre(productoDto.getNombre()).get().getId() != id)
@@ -90,7 +90,7 @@ public class wualkiController {
 //eliminar un producto
     @DeleteMapping("/deleteProd/{id}")
     @ResponseStatus(HttpStatus.OK)
-     public ResponseEntity<?> delete(@PathVariable("id") Long id){
+     public ResponseEntity<?> delete(@PathVariable Long id){
         if(!productoService.existsById(id))
             return new ResponseEntity<>(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         productoService.eliminarProducto(id);
