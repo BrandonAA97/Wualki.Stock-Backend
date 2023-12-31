@@ -1,4 +1,4 @@
-package Brandon.WualkiStock.models.Response;
+package Brandon.WualkiStock.auth.Request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class usuarioResponse {
+public class LoginRequest {
     String username;
     String password;
 }

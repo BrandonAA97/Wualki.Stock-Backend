@@ -12,11 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import Brandon.WualkiStock.models.dto.Mensaje;
 import Brandon.WualkiStock.models.dto.ProductoDto;
 import Brandon.WualkiStock.models.dto.ProductoRequest;
-import Brandon.WualkiStock.models.dto.UsuarioRequest;
 import Brandon.WualkiStock.models.entity.Producto;
-import Brandon.WualkiStock.models.entity.Usuario;
 import Brandon.WualkiStock.service.ProductoService;
-import Brandon.WualkiStock.service.UsuarioService;
+
 
 
 
@@ -26,27 +24,8 @@ import Brandon.WualkiStock.service.UsuarioService;
 @CrossOrigin (origins = "http://localhost:4200") //conexion con el frontend
 public class wualkiController {
 
-
-    @Autowired
-    private final UsuarioService usuarioService;
     @Autowired
     private final ProductoService productoService;
-//Crear el Usuario
-    @PostMapping("/addUser")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void addUser(@RequestBody UsuarioRequest usuarioRequest){
-        this.usuarioService.addNewUser(usuarioRequest);
-    }
-//login del usuario
-    @PostMapping("/login")
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Usuario> login(@RequestBody UsuarioRequest usuarioRequest){
-    return ResponseEntity.ok(usuarioService.login(usuarioRequest.getUsername(), usuarioRequest.getPassword()));
-    }
-
-
-//---------------------------------------------------------------
-
 
 //Agregar un nuevo producto
     @PostMapping("/addProduct")
